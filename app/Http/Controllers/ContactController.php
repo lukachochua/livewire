@@ -18,6 +18,6 @@ class ContactController extends Controller
     {
         Mail::to('lukachochua@gmail.com')->send(new ContactFormMailable($request->name, $request->email, $request->phone, $request->message));
 
-        return to_route('welcome');
+        return back()->with('success', 'Mail has been sent');
     }
 }
