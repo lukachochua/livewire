@@ -18,6 +18,11 @@ Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
 
+Route::get('/search', function(){
+    return view('search-dropdown');
+})->name('search-dropdown');
+
+
 
 Route::get('/contact', [ContactController::class, 'show'])->name('contact.show');
 Route::post('/contact', [ContactController::class, 'post'])->name('contact.post');
