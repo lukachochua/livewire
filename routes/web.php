@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ContactController;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,6 +22,12 @@ Route::get('/', function () {
 Route::get('/search', function(){
     return view('search-dropdown');
 })->name('search-dropdown');
+
+Route::get('/users', function(){
+    return view('users-table', [
+        'users' => User::paginate(15)
+    ]);
+})->name('users-table');
 
 
 

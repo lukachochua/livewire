@@ -10,5 +10,6 @@
     <body class="antialiased">
         <h1 class="text-xl text-green-600"> <a href={{ route('contact.show')}}>Contact Form</a></h1>
         <h1 class="text-xl text-green-600"> <a href={{ route('search-dropdown')}}>Search Dropown</a></h1>
+        <h1 class="text-xl text-green-600"> <a href={{ route('users-table')}}>Users Table</a></h1>
     </body>
 </html>
