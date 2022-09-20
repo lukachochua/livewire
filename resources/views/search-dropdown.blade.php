@@ -5,7 +5,7 @@
     <title>Livewire</title>
     @livewireStyles
 </head>
-<body>
+<body class="flex flex-col h-screen my-auto items-center mt-8">
 
     <h2 class="text-lg font-semibold mt-4">Livewire Search Dropdown</h2>
 
@@ -18,7 +18,7 @@
                             <img class="block lg:hidden h-8 w-auto"
                                 src="https://tailwindui.com/img/logos/workflow-mark-on-white.svg" alt="Workflow logo">
                             <img class="hidden lg:block h-8 w-auto"
-                                src="https://tailwindui.com/img/logos/workflow-logo-on-white.svg" alt="Workflow logo">
+                                src="https://tailwindui.com/img/logos/workflow-mark-on-white.svg" alt="Workflow logo">
                         </div>
                         <div class="hidden lg:ml-6 lg:flex">
                             <a href="#"

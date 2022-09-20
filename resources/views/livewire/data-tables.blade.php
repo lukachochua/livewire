@@ -1,4 +1,4 @@
-<div>
+<div class="flex flex-col h-screen my-auto items-center">
     <div class="flex flex-col mt-8">
         <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
             <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
@@ -13,14 +13,15 @@
                                         clip-rule="evenodd"></path>
                                 </svg>
                             </div>
-                            <input id="search"
+                            <input wire:model="search"
+                                id="search"
                                 class="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md leading-5 bg-white placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 focus:border-blue-300 focus:shadow-outline-blue sm:text-sm transition duration-150 ease-in-out"
                                 placeholder="Search" type="search">
                         </div>
                     </div>
                     <div class="relative flex items-start">
                         <div class="flex items-center h-5">
-                            <input  id="active" type="checkbox"
+                            <input wire:model="active" id="active" type="checkbox"
                                 class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out">
                         </div>
                         <div class="ml-3 text-sm leading-5">
@@ -35,12 +36,28 @@
                         <thead>
                             <tr>
                                 <th
-                                    class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                                    Name
+                                    class="px-6 py-3 text-left">
+                                    <div class="flex items-centter">
+                                        <button wire:click="sortBy('name')" class="bg-gray-50 text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider"
+                                            >NAME</button>
+                                        <x-sort-icon
+                                            field="name"
+                                            :sortField="$sortField"
+                                            :sortAsc="$sortAsc" 
+                                        />
+                                    </div>   
                                 </th>
                                 <th
-                                    class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                                    Email
+                                    class="px-6 py-3 text-left">
+                                    <div class="flex items-centter">
+                                        <button wire:click="sortBy('email')" class="bg-gray-50 text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider"
+                                            >EMAIL</button>
+                                        <x-sort-icon
+                                            field="email"
+                                            :sortField="$sortField"
+                                            :sortAsc="$sortAsc" 
+                                        />
+                                    </div>   
                                 </th>
                                 <th
                                     class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
@@ -52,7 +69,7 @@
                         <tbody class="bg-white divide-y divide-gray-200">
                             @foreach ($users as $user)
                             <tr>
-                                <td class="px-6 py-4 whitespace-no-wrap">
+                                <td class="w-4/12 px-6 py-4 whitespace-no-wrap">
                                     <div class="flex items-center">
                                         <div class="flex-shrink-0 h-10 w-10">
                                             <img class="h-10 w-10 rounded-full"
@@ -65,7 +82,7 @@
                                         </div>
                                     </div>
                                 </td>
-                                <td class="px-6 py-4 whitespace-no-wrap">
+                                <td class=" w-4/12 px-6 py-4 whitespace-no-wrap">
                                     <div class="text-sm leading-5 text-gray-900">{{ $user->email }}</div>
                                 </td>
                                 <td class="px-6 py-4 whitespace-no-wrap">
