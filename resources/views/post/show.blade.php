@@ -5,15 +5,18 @@
     <title>Post</title>
 </head>
 
-<div>
-    <h2 class="text-4xl">{{ $post->title }}</h2>
-    <div class="mt-8">
-        {{ $post->content }}
-        <div class="h-28 mt-8">Scroll down for comments...</div>
+
+<div class="flex justify-center">
+    <div class="my-8 ml-6 mr-6 py-4 border border-indigo-300 w-1/2 space-y-10 rounded-md bg-green-50">
+        <h2 class="text-4xl bg-green-100 text-center px-2 py-2">{{ $post->title }}</h2>
+        <div class="mt-8 ml-6">
+            {{ $post->content }}
+            <div class="px-2 py-2 w-48 rounded rounded-xl text-sm border border-green-800 mt-8 bg-indigo-600 text-white">Scroll down for comments...</div>
+        </div>
     </div>
 </div>
 
-<div class="my-8 space-y-10">
+<div class="ml-6 my-8 space-y-10">
     @if (session()->has('message'))
     <div class="rounded-md bg-green-50 p-4 my-8">
         <div class="flex">
@@ -46,9 +49,9 @@
     </div>
     @endif
 
-    <form action="{{ route('comment.store', $post->id) }}" method="POST" class="w-1/2 my-12">
+    <form action="{{ route('comment.store', $post->id) }}" method="POST" class="mx-16 my-12 flex justify-center">
         @csrf
-        <div class="flex">
+        <div class="flex justify-center w-1/2 mr-24">
             <img class="h-10 w-10 rounded-full" src="https://www.gravatar.com/avatar/?d=mp&f=y" alt="avatar">
             <div class="ml-4 flex-1">
                 <textarea name="comment" id="comment" rows="4" placeholder="Type your comment here..."
@@ -60,13 +63,13 @@
 
                 <button type="submit"
                     class="inline-flex items-center px-4 py-2 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition ease-in-out duration-150 mt-2 disabled:opacity-50">
-                    <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
+                    {{-- <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
                         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                         <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                         <path class="opacity-75" fill="currentColor"
                             d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
                         </path>
-                    </svg>
+                    </svg> --}}
                     <span>Post Comment</span>
                 </button>
 
@@ -75,7 +78,7 @@
     </form>
 
     @foreach ($post->comments->sortDesc() as $comment)
-    <div class="flex">
+    <div class="flex w-2/3 my-12 justify-center">
         <img class="h-10 w-10 rounded-full" src="https://www.gravatar.com/avatar/?d=mp&f=y" alt="avatar">
         <div class="ml-4">
             <div class="flex items-center">
