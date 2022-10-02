@@ -36,5 +36,6 @@ Route::get('/users', function(){
 Route::get('/contact', [ContactController::class, 'show'])->name('contact.show');
 Route::post('/contact', [ContactController::class, 'post'])->name('contact.post');
 
+Route::get('/posts', [PostController::class, 'posts']);
 Route::get('/post/{post}', [PostController::class, 'index'])->name('post.show');
 Route::post('/post/{post}/comment', [PostController::class, 'store'])->name('comment.store');

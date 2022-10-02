@@ -8,6 +8,13 @@ use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
+    public function posts()
+    {
+        return view('posts', [
+            'posts' => Post::all()
+        ]);
+    }
+
     public function index(Post $post)
     {
         return view('post.show', [
