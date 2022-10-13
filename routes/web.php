@@ -39,3 +39,6 @@ Route::post('/contact', [ContactController::class, 'post'])->name('contact.post'
 Route::get('/posts', [PostController::class, 'posts']);
 Route::get('/post/{post}', [PostController::class, 'index'])->name('post.show');
 Route::post('/post/{post}/comment', [PostController::class, 'store'])->name('comment.store');
+
+Route::get('/post/{post}/edit', [PostController::class, 'edit'])->name('post.edit');
+Route::patch('/post/{post}', [PostController::class, 'update'])->name('post.update'); 

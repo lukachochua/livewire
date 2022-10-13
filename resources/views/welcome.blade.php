@@ -16,7 +16,7 @@
                 <h1 class="text-xl text-white mt-4 p-2 bg-indigo-600  rounded rounded-xl border border-green-200"> <a href='/posts'>Posts</a></h1>
             </div>
 
-            <div class="my-8 m-auto border border-black h-1/4">
+            <div class="border rounded-xl p-2 bg-green-200 border-black h-1/4">
                 <h2 class="text-lg font-semibold mt-4">Livewire Polling</h2>  
                 <livewire:poll-example />
             </div>

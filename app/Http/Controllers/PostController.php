@@ -36,4 +36,29 @@ class PostController extends Controller
     
         return back()->with('message', 'Comment was posted!');
     }
+
+    public function edit(Post $post)
+    {
+        return view('post.edit', [
+            'post' => $post
+        ]);
+    }
+
+    public function update(Request $request, Post $post)
+    {
+        $request->validate([
+            'title' => 'required',
+            'content' => 'required',
+            'photo' => 'nullable|sometimes|image|max:5000'
+        ]);
+
+
+        $post->update([
+            'title' => $request->title,
+            'content' => $request->content,
+            'photo' => $request->photo ? $request->file('photo')->store('photos', 'public') : $post->photo,
+        ]);
+
+        return back()->with('message', 'Post Updated');
+    }
 }
