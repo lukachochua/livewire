@@ -5,7 +5,11 @@
     <title>Livewire</title>
     @livewireStyles
 </head>
-<body class="flex flex-col h-screen my-auto items-center mt-8">
+<header class="w-full">
+    <x-navbar />
+</header>
+
+<body class="flex flex-col h-screen my-auto items-center">
 
     <h2 class="text-lg font-semibold mt-4">Livewire Search Dropdown</h2>
 

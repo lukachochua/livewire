@@ -23,6 +23,10 @@ Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
 
+Route::get('/layout', function () {
+    return view('layout');
+});
+
 Route::get('/search', function(){
     return view('search-dropdown');
 })->name('search-dropdown');

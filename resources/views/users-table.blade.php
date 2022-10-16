@@ -5,6 +5,7 @@
     <title>Livewire</title>
     @livewireStyles
 </head>
+<x-navbar />
 <body>
     <livewire:data-tables />
     @livewireScripts

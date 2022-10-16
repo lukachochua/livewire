@@ -1,3 +1,4 @@
+<x-navbar />
 <div class="relative bg-white mt-8">
     <div class="absolute inset-0">
         <div class="absolute inset-y-0 left-0 w-1/2 bg-gray-50"></div>
