@@ -58,7 +58,7 @@ class PostEditTest extends TestCase
 
         Storage::fake('public');
 
-        $file = UploadedFile::fake()->image('photo.jpg', [10, 10]); 
+        $file = UploadedFile::fake()->image('photo.jpg', 10, 10); 
 
         Livewire::test(PostEdit::class, [ 'post' => $post ])
             ->set('title', 'New Title')
